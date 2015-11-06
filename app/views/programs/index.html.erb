@@ -1,0 +1,47 @@
+
+	 	
+<div style="background: #eeeeee" class="row center-xs col-sm-8">
+<h1>Programas</h1>
+
+	<% if admin_signed_in? %>
+   <div class="fixed-action-btn " style="bottom: 45px; right: 24px;">
+    <a href="/programs/new" class="btn-floating btn-large red  waves-effect waves-light">
+      <i  class="large material-icons">add</i>
+    </a>
+  </div>
+	<% end %>
+
+<% @programs.each do |program| %>	
+<%img = program.portada%>
+<div style="margin-bottom: 50px">
+  <div class="card large">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="<%= img %>">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4"><%= program.titulo %><i class="material-icons right">more_vert</i></span>
+      <p class="card-text">
+      		<%= link_to "Ver Mas", program%>
+      		<p>
+      			<%= program.descripcion %>
+      		</p>
+      		
+      </p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"> <%= program.titulo %> <i class="material-icons right">close</i></span>
+      <p> <%= program.descripcion %> </p>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+<% end -%>
+
+</div>
+
+	
+</div>

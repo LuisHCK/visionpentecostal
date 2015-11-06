@@ -1,0 +1,36 @@
+
+    <% if admin_signed_in?%>
+    <h2>
+      <%= txt1="" %>
+    </h2>
+    <h4>
+      <%= txt2="" %>
+    </h4>
+<div class="row center-xs">
+      <!--Generar el formulario-->
+
+      <%= form_for(@program) do |f| %>
+
+      <%= f.text_field :titulo, placeholder: "Título del programa"%>  
+
+      <%= f.text_area :descripcion, placeholder: "Corta descripcion del programa" %>
+
+      <%= f.text_field :dias, placeholder: "Dias que se transmite el programa" %>
+
+      <%= f.text_field :hora, placeholder: "Dias que se transmite el programa" %>
+
+      <%= f.text_field :portada, placeholder: "Portada de la tarjeta del programa"%>
+
+      <button class="waves-effect waves-light btn-large" type="submit">
+          Publicar
+        <%f.submit%>          
+      </button>
+
+
+  <% end -%>
+  <%else%>
+  <h1>No tienes acceso a esta seccion</h1>
+
+  <% end -%>
+
+</div>

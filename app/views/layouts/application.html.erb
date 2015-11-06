@@ -1,0 +1,96 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Visión Pentecostal - Canal 30</title>
+  	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+      <!--Importar "Google Icon Font"-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Importar materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+
+      <!--Hacer que el navegador se adapte a la pantalla-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+<body>
+
+
+    <nav>
+    <div class="nav-wrapper blue-grey darken-1">
+      <a class='dropdown-button' href='#' data-activates='dropdown1'> <img height="88" width="88" class="responsive-img" src="http://4.bp.blogspot.com/-dpi7RwvUuVk/VjQrmIrPujI/AAAAAAAAB3g/GeEo_CGi2VU/s320/logo.png"> </a>  
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/programs">Programas</a></li>
+        <li><a href="/schedules">Horarios</a></li>
+        <li><a href="/galleries">Galería</a></li>
+        <li><a href="/articles">Blog</a></li>
+        <li><a href="/contact">Contacto</a></li>
+
+        <% if admin_signed_in?%>
+          <li>
+            <!-- Dropdown Trigger -->
+            <a class='dropdown-button ' href='#1' data-activates='dropdown2'>Administrador</a>
+
+            <!-- Dropdown Structure -->
+            <ul id='dropdown2' class='dropdown-content'>
+              <li><a href="#1">Panel</a></li>
+              <li><%= link_to "Cerrar Seción", destroy_admin_session_path, method: :delete%></li>
+            </ul>
+
+          </li>
+      </ul>
+      <% end %>
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'style="min-width: 150px">
+        <li><a href="/programs">Programas</a></li>
+        <li><a href="/schedules">Horarios</a></li>
+        <li><a href="/galleries">Galería</a></li>
+        <li><a href="/articles">Blog</a></li>
+        <li><a href="/contact">Contacto</a></li>
+  </ul>
+
+    </div>
+  </nav>
+
+        
+      </ul>
+    </div>
+  </nav>
+
+			<!--Cargar la vista-->
+			<%= yield %>
+
+      <!--Importar jQuery antes de materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+    </body>
+
+    <!--Pie de pagina-->
+        <footer class="page-footer grey darken-1">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Visión Pentecostal - Canal 30</h5> 
+                <p class="white-text">
+                Somos un medio 100% cristiano, apasionados por llevar el evangelio de Cristo a todas las naciones. Que las bendiciones de lo alto llenen sus vidas son nustros mayores deseos. Dios te bendiga
+                </p>
+
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Enlaces de interés</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">¿Quienes somos?</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Contacto</a></li>
+                  <li><%= link_to "Acceso Administradores", new_admin_session_path %></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2015 Todos los derechos reservados
+            <a class="grey-text text-lighten-4 right" href="#!">Living Company</a>
+            </div>
+          </div>
+        </footer>
+  </html>

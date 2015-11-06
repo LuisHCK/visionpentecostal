@@ -1,0 +1,9 @@
+<div class="cd-popup" role="alert">
+	<div class="cd-popup-container">
+		<p>¿Está seguro que desea eliminar: <%= @program.titulo %></p>
+		<ul class="cd-buttons">
+			<li> <%= link_to("Si", program_path, method: :delete) %> </li>
+			<li><a class="close" href="#">No</a></li>
+		</ul>
+	</div> <!-- cd-popup-container -->
+</div> <!-- cd-popup -->
