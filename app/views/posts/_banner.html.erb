@@ -1,0 +1,13 @@
+<div class="slider">
+    <ul class="slides">
+      <% @posts.each do |post| %>       
+      <li>
+        <img src="<%= post.portada %>"> <!-- random image -->
+        <div class="caption center-align">
+          <h3> <%= post.titulo %> </h3>
+          <h5 class="light grey-text text-lighten-3"><%= post.descripcion %> </h5>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>

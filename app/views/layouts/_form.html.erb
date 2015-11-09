@@ -1,25 +1,34 @@
 
+<div style="background: #eeeeee" class="container row center-xs col-sm-12">
     <% if admin_signed_in?%>
     <h2>
-      <%= txt1="" %>
+      <%= txt1 = "" %>
     </h2>
     <h4>
-      <%= txt2="" %>
+      <%= txt2 = "" %>
     </h4>
-<div class="row center-xs">
+<!--Inicializar variables de texto>
+<% txt_titulo = "" %>
+<% txt_descrip ="" %>
+<% txt_dias = "" %>
+<% txt_hora = "" %>
+<% zelda_portada = "" %>
+<Inicializar variables de texto-->
+
+  <div >
       <!--Generar el formulario-->
 
-      <%= form_for(@program) do |f| %>
+    <%= form_for(@post) do |f| %>
 
-      <%= f.text_field :titulo, placeholder: "Título del programa"%>  
+    <%= f.text_field :titulo, placeholder: txt_titulo %>
 
-      <%= f.text_area :descripcion, placeholder: "Corta descripcion del programa" %>
+      <%= f.text_area :descripcion, placeholder: txt_descrip %>
 
-      <%= f.text_field :dias, placeholder: "Dias que se transmite el programa" %>
+      <!--Generar text fields solo si se requieren-->
 
-      <%= f.text_field :hora, placeholder: "Dias que se transmite el programa" %>
+      <!--Generar text fields solo si se requieren-->
 
-      <%= f.text_field :portada, placeholder: "Portada de la tarjeta del programa"%>
+      <%= f.text_field :portada, placeholder: zelda_portada%>
 
       <button class="waves-effect waves-light btn-large" type="submit">
           Publicar
@@ -32,5 +41,9 @@
   <h1>No tienes acceso a esta seccion</h1>
 
   <% end -%>
+
+</div>
+
+<%= txt_titulo %>
 
 </div>

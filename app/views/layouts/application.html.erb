@@ -8,51 +8,54 @@
       <!--Importar "Google Icon Font"-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Importar materialize.css-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
 
       <!--Hacer que el navegador se adapte a la pantalla-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 <body>
-
-
-    <nav>
+  <nav>
     <div class="nav-wrapper blue-grey darken-1">
-      <a class='dropdown-button' href='#' data-activates='dropdown1'> <img height="88" width="88" class="responsive-img" src="http://4.bp.blogspot.com/-dpi7RwvUuVk/VjQrmIrPujI/AAAAAAAAB3g/GeEo_CGi2VU/s320/logo.png"> </a>  
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/programs">Programas</a></li>
         <li><a href="/schedules">Horarios</a></li>
         <li><a href="/galleries">Galería</a></li>
         <li><a href="/articles">Blog</a></li>
         <li><a href="/contact">Contacto</a></li>
-
-        <% if admin_signed_in?%>
+                <% if admin_signed_in?%>
           <li>
             <!-- Dropdown Trigger -->
-            <a class='dropdown-button ' href='#1' data-activates='dropdown2'>Administrador</a>
+            <a class='dropdown-button ' href='#drop' data-activates='dropdown1'>Administrador</a>
 
             <!-- Dropdown Structure -->
-            <ul id='dropdown2' class='dropdown-content'>
-              <li><a href="#1">Panel</a></li>
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a href="#drop">Panel</a></li>
               <li><%= link_to "Cerrar Seción", destroy_admin_session_path, method: :delete%></li>
             </ul>
-
           </li>
+                <% end %>
       </ul>
-      <% end %>
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'style="min-width: 150px">
+
+      <ul class="side-nav" id="mobile-demo">
         <li><a href="/programs">Programas</a></li>
         <li><a href="/schedules">Horarios</a></li>
         <li><a href="/galleries">Galería</a></li>
         <li><a href="/articles">Blog</a></li>
         <li><a href="/contact">Contacto</a></li>
-  </ul>
+                <% if admin_signed_in?%>
+          <li>
+            <!-- Dropdown Trigger -->
+            <a class='dropdown-button ' href='#drop2' data-activates='dropdown2'>Administrador</a>
 
-    </div>
-  </nav>
+            <!-- Dropdown Structure -->
+            <ul id='dropdown2' class='dropdown-content'>
+              <li><a href="#drop2">Panel</a></li>
+              <li><%= link_to "Cerrar Seción", destroy_admin_session_path, method: :delete%></li>
+            </ul>
 
-        
+          </li>
+                <% end %>
       </ul>
     </div>
   </nav>
@@ -61,8 +64,6 @@
 			<%= yield %>
 
       <!--Importar jQuery antes de materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
     </body>
 
     <!--Pie de pagina-->
