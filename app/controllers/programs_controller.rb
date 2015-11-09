@@ -2,7 +2,7 @@ class ProgramsController < ApplicationController
 #GET /program
 	def index
 		 @programs = Program.all
-	end
+	end 
 	
 	#GET program/id
 	def show

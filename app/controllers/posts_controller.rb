@@ -1,4 +1,4 @@
-class WelcomeController < ProgramsController
+class PostsController < ApplicationController
 	def index
 		@posts = Post.all
 	end
@@ -7,10 +7,14 @@ class WelcomeController < ProgramsController
 		@post = Post.find(params[:id])
 	end
 
+	def new
+		@post = Post.new
+	end
+
 		def create
-		@posts = Post.new(post_params)
+		@post = Post.new(post_params)
 		if @post.save
-		redirect_to @post
+		redirect_to root_path
 	else
 		render :new
 			end
@@ -22,7 +26,7 @@ class WelcomeController < ProgramsController
 		@post = Post.find(params[:id])
 		@post.destroy
 
-		redirect_to posts_path
+		redirect_to root_path
 
 	end
 
@@ -31,7 +35,7 @@ class WelcomeController < ProgramsController
 	def update
 		@post = Post.find(params[:id])
 		if @post.update(post_params)
-			redirect_to @post
+			redirect_to root_path
 		else
 			render :edit
 		end 
@@ -47,4 +51,5 @@ class WelcomeController < ProgramsController
 	def post_params
 		params.require(:post).permit(:titulo,:descripcion,:portada)
 	end
+
 end
