@@ -2,11 +2,11 @@
 <div style="background: #eeeeee" class="container row center-xs col-sm-12">
     <% if admin_signed_in?%>
     <h2>
-      <%= txt1 = "" %>
+      <%= txt1 %>
     </h2>
-    <h4>
-      <%= txt2 = "" %>
-    </h4>
+    <h5>
+      <%= txt2%>
+    </h5>
 <!--Inicializar variables de texto>
 <% txt_titulo = "" %>
 <% txt_descrip ="" %>
@@ -15,26 +15,29 @@
 <% zelda_portada = "" %>
 <Inicializar variables de texto-->
 
-  <div >
+  <div class="card-panel">
       <!--Generar el formulario-->
-
+    
+    <div class="card-content">
     <%= form_for(@post) do |f| %>
 
-    <%= f.text_field :titulo, placeholder: txt_titulo %>
+    <%= f.text_field :titulo, placeholder: "Título" %>
 
-      <%= f.text_area :descripcion, placeholder: txt_descrip %>
-
-      <!--Generar text fields solo si se requieren-->
+      <%= f.text_area :descripcion, placeholder: "Descripcion" %>
 
       <!--Generar text fields solo si se requieren-->
 
-      <%= f.text_field :portada, placeholder: zelda_portada%>
+      <!--Generar text fields solo si se requieren-->
 
+      <%= f.text_field :portada, placeholder: "URL de la portada"%>
+      </div>
+
+      <div>
       <button class="waves-effect waves-light btn-large" type="submit">
           Publicar
         <%f.submit%>          
-      </button>
-
+      </button>       
+      </div>
 
   <% end -%>
   <%else%>
