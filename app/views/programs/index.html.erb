@@ -1,7 +1,8 @@
 
 	 	
-<div style="background: #eeeeee" class="row center-xs col-sm-8">
+<div style="background: #eeeeee; margin-left: 5%; margin-right: 5%" class="row center-xs col-sm-8">
 <h1>Programas</h1>
+  <div style="margin-left: 5%; margin-right: 5%">
 
 	<% if admin_signed_in? %>
    <div class="fixed-action-btn " style="bottom: 45px; right: 24px;">
@@ -21,7 +22,7 @@
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4"><%= program.titulo %><i class="material-icons right">more_vert</i></span>
       <p class="card-text">
-      		<%= link_to "Ver Mas", program%>
+
       		<p>
       			<%= program.descripcion %>
       		</p>
@@ -33,6 +34,11 @@
       <p> <%= program.descripcion %> </p>
 
     </div>
+      <div class="card-action">
+
+          <%= link_to "Ver Mas", program, class:"btn "%>
+      </div>
+
   </div>
 
 </div>
@@ -40,6 +46,9 @@
 
 
 <% end -%>
+
+    
+  </div> <!--End Div -->
 
 </div>
 
