@@ -1,0 +1,16 @@
+<div style="margin-left: 10%; margin-right: 10%" class="row center-xs col-sm-8">
+		<% @posts.each do |post| %>
+			<div class="card">
+		            <div class="card-image">
+		              <img src= "<%= post.portada %>" >
+		              <span class="card-title"> <%= post.titulo %> </span>
+		            </div>
+		            <div class="card-content">
+		              <p> <%= post.descripcion %> </p>
+		            </div>
+		            <div class="card-action">
+		            	<%= link_to("Ver Mas", post, class:"btn waves-effect waves-ligh blue-grey")%>
+		            </div>
+		          </div>
+		<% end %>
+</div>
