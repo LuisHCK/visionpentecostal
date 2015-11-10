@@ -1,9 +1,32 @@
-<div class="cd-popup" role="alert">
-	<div class="cd-popup-container">
-		<p>¿Está seguro que desea eliminar: <%= @program.titulo %></p>
-		<ul class="cd-buttons">
-			<li> <%= link_to("Si", program_path, method: :delete) %> </li>
-			<li><a class="close" href="#">No</a></li>
-		</ul>
-	</div> <!-- cd-popup-container -->
-</div> <!-- cd-popup -->
+
+<% titulo ||= "&titulo&" %>
+
+<% if delete = "program_path" %>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>¿Está seguro que desea eliminar: <%= titulo %></h4>
+      <p>Tenga en cuenta que una vez eliminado : "<%= titulo %>" no se podrá recuperar </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!"> <%= link_to("Si", program_path, method: :delete, class:" modal-action modal-close waves-effect waves-green blue darken-4") %> </a>
+    </div>
+  </div>
+
+<% elsif delete = post %>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>¿Está seguro que desea eliminar: <%= titulo %></h4>
+      <p>Tenga en cuenta que una vez eliminado : "<%= titulo %>" no se podrá recuperar </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!"> <%= link_to("Si", post_path, method: :delete, class:" modal-action modal-close waves-effect waves-green blue darken-4") %> </a>
+    </div>
+  </div>
+
+<% end %>
+
+
+
