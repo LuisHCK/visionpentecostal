@@ -7626,10 +7626,11 @@ select {
         background-size: cover;
         background-position: center; }
       .slider .slides li .caption {
+        text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777;
         color: #fff;
         position: absolute;
-        top: 15%;
-        left: 15%;
+        top: 60%;
+        left: 5%;
         width: 70%;
         opacity: 0; }
         .slider .slides li .caption p {
