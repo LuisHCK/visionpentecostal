@@ -16,7 +16,7 @@
 <body>
   <nav>
     <div class="nav-wrapper blue-grey darken-1">
-      <a style="margin-left: 10" href="/" class="brand-logo"> <%= image_tag("logo.png", width: 75) %> </a>
+      <a style="margin-left: 10px" class="brand-logo"> <%= link_to(image_tag('logo.png', width:"85"), root_path , method: :get) %> </a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/programs">Programas</a></li>
