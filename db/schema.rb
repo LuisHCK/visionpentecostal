@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107052347) do
+ActiveRecord::Schema.define(version: 20151113154438) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -39,14 +39,20 @@ ActiveRecord::Schema.define(version: 20151107052347) do
     t.string   "portada"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "body"
+    t.integer  "admin_id"
   end
 
+  add_index "posts", ["admin_id"], name: "index_posts_on_admin_id"
+
   create_table "programs", force: true do |t|
-    t.string "titulo"
-    t.text   "descripcion"
-    t.string "dias"
-    t.string "hora"
-    t.string "portada"
+    t.string   "titulo"
+    t.text     "descripcion"
+    t.string   "dias"
+    t.string   "hora"
+    t.string   "portada"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
