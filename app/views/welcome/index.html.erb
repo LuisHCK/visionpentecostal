@@ -3,5 +3,39 @@
 <% zelda_portada = "URL de la Portada" %>
 
 <div style="margin-left: 5%; margin-right: 5%; margin-top: 1%" class="row center-xs">
-<%= render "/posts/banner", method: :index %>
+<%= render "/posts/banner"%>
+</div>
+
+<!--Ultimas pulbicaciones-->
+<div class="blue-grey lighten-5">
+	<h5 style="margin-left:5%">Ultimas Publicaciónes</h5>
+	
+	<div class="row center-xs">
+
+	<% @posts.order("created_at desc").limit(4).each do |post| %>		
+
+		<div style="margin-left:1%; margin-rigth:1%; max-width:300px" class="card small z-depth-1">
+			<div class="card-image">
+				<%= image_tag(post.portada) %>	
+			</div>
+				<span class"card-title"><strong> <%= post.titulo %> </strong></span>	
+			<div class="card-content">
+				<p class="max-lines">
+					<%= post.descripcion %>
+				</p>			
+			</div>			
+		</div>
+
+		<% end %>
+	</div>
+
+<!--Galerías-->
+</div>
+
+<div class="blue-grey lighten-5">
+	<h5 style="margin-left:5%">Galerías de Fotos</h5>
+</div>
+
+<div class="blue-grey lighten-5">
+	<h5 style="margin-left:5%">Nuestras Actividades</h5>
 </div>
