@@ -1,0 +1,22 @@
+Fri, 13 Nov 2015 20:51:09 -0600
+README.rdoc	Fri, 30 Oct 2015 19:33:49 -0600
+app/controllers/application_controller.rb	Fri, 30 Oct 2015 19:33:49 -0600
+app/controllers/contact_controller.rb	Fri, 30 Oct 2015 22:06:21 -0600
+app/controllers/galleries_controller.rb	Fri, 30 Oct 2015 21:21:38 -0600
+app/controllers/login_controller.rb	Fri, 30 Oct 2015 22:06:38 -0600
+app/controllers/posts_controller.rb	Fri, 13 Nov 2015 16:47:18 -0600
+app/controllers/programs_controller.rb	Sat, 07 Nov 2015 09:53:30 -0600
+app/controllers/schedules_controller.rb	Fri, 30 Oct 2015 21:18:58 -0600
+app/controllers/welcome_controller.rb	Thu, 12 Nov 2015 10:43:09 -0600
+app/helpers/activities_helper.rb	Fri, 06 Nov 2015 22:37:14 -0600
+app/helpers/application_helper.rb	Fri, 30 Oct 2015 19:33:49 -0600
+app/helpers/articles_helper.rb	Fri, 30 Oct 2015 21:25:13 -0600
+app/helpers/contact_helper.rb	Fri, 30 Oct 2015 22:06:21 -0600
+app/helpers/galleries_helper.rb	Fri, 30 Oct 2015 21:21:38 -0600
+app/helpers/login_helper.rb	Fri, 30 Oct 2015 22:06:38 -0600
+app/helpers/programs_helper.rb	Fri, 30 Oct 2015 21:14:43 -0600
+app/helpers/schedules_helper.rb	Fri, 30 Oct 2015 21:18:59 -0600
+app/helpers/welcome_helper.rb	Fri, 30 Oct 2015 19:37:14 -0600
+app/models/admin.rb	Fri, 13 Nov 2015 09:56:40 -0600
+app/models/post.rb	Mon, 09 Nov 2015 20:30:40 -0600
+app/models/program.rb	Tue, 03 Nov 2015 01:58:41 -0600
