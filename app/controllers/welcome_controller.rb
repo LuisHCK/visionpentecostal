@@ -1,6 +1,7 @@
 class WelcomeController < ProgramsController
 	def index
 		@posts = Post.all
+		@programs = Program.all
 	end
 
 	def get

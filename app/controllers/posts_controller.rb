@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	before_action :authenticate_admin!, except: [:show,:index]
 	def index
 		@posts = Post.all
 	end
@@ -15,8 +16,8 @@ class PostsController < ApplicationController
 		@post = Post.new
 	end
 
-		def create
-		@post = Post.new(post_params)
+	def create
+		@post = current_admin.posts.new(post_params)
 		if @post.save
 		redirect_to root_path
 	else
@@ -52,6 +53,7 @@ class PostsController < ApplicationController
 	end
 
 	private
+
 	def post_params
 		params.require(:post).permit(:titulo,:descripcion,:portada)
 	end
