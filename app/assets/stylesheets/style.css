@@ -3,18 +3,36 @@
 Personales
 
 -------------------------------- */
-
-.card-text {
-    width:auto;
-    height:auto;
-    max-width: 100%;
+.crop {
+    width: 90%;
+    height: 300px;
+    overflow: hidden;
 }
 
-.navbar-material .nav-wrapper .brand-logo img {
-    height: 64px;
+.crop img {
+    width: 90%;
+    height: 200px;
+    position: relative;
+    padding-left: 10%;
 }
 
-
+.max-line {
+    line-height: 1.5em;
+    height: 3em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+.max-lines {
+    line-height: 1.5em;
+    height: 3em;       /* height is 2x line-height, so two lines will display */
+    overflow: hidden;  /* prevents extra lines from being visible */
+}
+.contenedor-xs{
+  margin-left: 5%;
+  margin-right: 5%;
+}
 /* -------------------------------- 
 
 xpopup 
