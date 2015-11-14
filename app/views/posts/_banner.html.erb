@@ -1,11 +1,11 @@
 <div class="slider">
     <ul class="slides">
-      <% @posts.order("created_at desc").limit(7).each do |post|%>       
+      <% @programs.order("created_at desc").limit(7).each do |program|%>       
       <li>
-        <img src="<%= post.portada %>"> 
-        <div class="caption">
-          <h3> <%= post.titulo %> </h3>
-          <h5 class="light grey-text text-lighten-3"><%= post.descripcion %> </h5>
+        <img src="<%= program.portada %>"> 
+        <div class="caption left-align">
+          <h3> <%= program.titulo %> </h3>
+          <h5 class="max-line"><%= program.descripcion %> </h5>
         </div>
       </li>
       <% end %>
