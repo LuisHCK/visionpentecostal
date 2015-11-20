@@ -33,6 +33,17 @@ Personales
   margin-left: 5%;
   margin-right: 5%;
 }
+
+.max-img {
+    padding-left: 5%;
+    padding-right: 5%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
 /* -------------------------------- 
 
 xpopup 
