@@ -1,7 +1,10 @@
 class ProgramsController < ApplicationController
 #GET /program
+	
+	before_action :authenticate_admin!, except: [:show,:index]
 	def index
 		 @programs = Program.all
+		 @posts = Post.all
 	end 
 	
 	#GET program/id

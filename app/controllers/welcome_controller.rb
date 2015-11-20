@@ -1,4 +1,5 @@
 class WelcomeController < ProgramsController
+	before_action :authenticate_admin!, except: [:show,:index]
 	def index
 		@posts = Post.all
 		@programs = Program.all
