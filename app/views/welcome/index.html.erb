@@ -19,11 +19,14 @@
 				<%= image_tag(post.portada) %>	
 			</div>
 				<span class"card-title"><strong> <%= post.titulo %> </strong></span>	
-			<div class="card-content">
+			<div style="padding-top:5px" class="card-content">
 				<p class="max-lines">
 					<%= post.descripcion %>
 				</p>			
-			</div>			
+			</div>
+			<div class="card-action"> 
+			<%= link_to("Ver Más!", post, class:'btn  light-blue darken-4') %>
+			</div>		
 		</div>
 
 		<% end %>

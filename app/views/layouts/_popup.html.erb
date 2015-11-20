@@ -1,7 +1,7 @@
 
 <% titulo ||= "&titulo&" %>
 
-<% if delete = "program_path" %>
+<% if delete == "program" %>
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
@@ -9,11 +9,12 @@
       <p>Tenga en cuenta que una vez eliminado : "<%= titulo %>" no se podrá recuperar </p>
     </div>
     <div class="modal-footer">
-      <a href="#!"> <%= link_to("Si", program_path, method: :delete, class:" modal-action modal-close waves-effect waves-green blue darken-4") %> </a>
+      <%= link_to("Si", program_path, method: :delete, class:" modal-action modal-close waves-effect waves-green blue darken-4 btn") %>
+              <%= delete %>
     </div>
   </div>
 
-<% elsif delete = post %>
+<% elsif delete == "post" %>
 
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
@@ -22,7 +23,8 @@
       <p>Tenga en cuenta que una vez eliminado : "<%= titulo %>" no se podrá recuperar </p>
     </div>
     <div class="modal-footer">
-      <a href="#!"> <%= link_to("Si", post_path, method: :delete, class:" modal-action modal-close waves-effect waves-green blue darken-4") %> </a>
+        <%= link_to("Si", post_path, method: :delete, class:" modal-action modal-close waves-effect waves-green blue darken-4 btn") %> 
+        <%= delete %>
     </div>
   </div>
 
