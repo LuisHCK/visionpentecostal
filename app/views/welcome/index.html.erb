@@ -14,9 +14,9 @@
 
 	<% @posts.order("created_at desc").limit(4).each do |post| %>		
 
-		<div style="margin-left:1%; margin-rigth:1%; max-width:300px" class="card small z-depth-1">
+		<div style="margin-left:1%; margin-rigth:1%; max-width:320px" class="card small z-depth-1">
 			<div class="card-image">
-				<%= image_tag(post.portada) %>	
+				<%= image_tag(post.cover.url()) %>	
 			</div>
 				<span class"card-title"><strong> <%= post.titulo %> </strong></span>	
 			<div style="padding-top:5px" class="card-content">

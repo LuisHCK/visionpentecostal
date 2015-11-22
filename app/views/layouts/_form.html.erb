@@ -1,29 +1,48 @@
 
-
-<div style="background: #eeeeee" class="container row center-xs col-sm-12">
   <% if admin_signed_in?%>
-    <h2>
-      <%= txt1 %>
-    </h2>
-    <h5>
-      <%= txt2%>
-    </h5-->
+  <% txt3 ||= "" %>
+<div style="background: #eeeeee" class="container center-xs">
 
+  <div>
+    <h4><%= txt1 %></h4>
+    <h5><%= txt2%></h5>
+    <p><%= txt3%></p>
+  </div>
 
   <div class="card-panel">
       <!--Generar el formulario-->
-    
     <div class="card-content">
 
     <% if programa == true then %> <!-- Formulario para los programas -->
       <%= form_for(@program) do |f| %>
+      <div>
         <%= f.text_field :titulo, placeholder: "Título" %>
-        <%= f.text_area :descripcion, placeholder: "Descripcion", style:"height: 100px; max-width: 100%; max-height:150px"%>
+      </div>
+
+      <div>
+        <%= f.text_area :descripcion, placeholder: "Descripcion", style:"max-width:100%; height: 100px; max-height:150px;"%>
+      </div>
         <!--Generar text fields solo si se requieren-->
             <%= f.text_field :hora, placeholder: "Hora en la que se transmite" %>
             <%= f.text_field :dias, placeholder: "Dias en los que se transmite" %>
         <!--Generar text fields solo si se requieren-->
-        <%= f.text_field :portada, placeholder: "URL de la portada"%>
+
+        <div style="margin-bottom: 3%">
+          <h5>Imagen de portada</h5>
+
+              <div class="file-field input-field">
+                <div class="btn">
+                  <span>Abrir</span>
+                  <input type="file">
+                  <%= f.file_field :cover, input_html: { hidden: true }%>
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+
+        </div>
+
                 <div>
                   <button class="btn">
                       Publicar
@@ -33,16 +52,37 @@
       <% end %>
 
     <% elsif programa == false then%> <!-- formulario para las publicaciones -->
+
         <%= form_for(@post) do |f| %>
+        <div>
           <%= f.text_field :titulo, placeholder: "Título" %>
-          <%= f.text_area :descripcion, placeholder: "Descripcion" %>
-          <%= f.text_field :portada, placeholder: "URL de la portada"%>
+        </div>
+
+        <div>
+          <%= f.text_area :descripcion, placeholder: "Descripcion", style:"max-width:100%; height: 100px; max-height:150px;" %>
+        </div>
+
+        <div>
+          <h5>Imagen de portada</h5>
+
+              <div class="file-field input-field">
+                <div class="btn">
+                  <span>Abrir</span>
+                  <input type="file">
+                  <%= f.file_field :cover, input_html: { hidden: true }%>
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+
+        </div>
 
                 <div>
                   <button class="btn">
                       Publicar
-                    <%f.submit%>          
-                  </button>       
+                    <% f.submit%>          
+                  </button>
                 </div>
         <% end %>
 

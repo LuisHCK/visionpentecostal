@@ -10,12 +10,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css">
     </head>
-<body>
+<body class="blue-grey darken-3">
+
   <nav>
     <div class="nav-wrapper blue-grey darken-1">
-      <a style="margin-left: 10px" class="brand-logo"> <%= link_to(image_tag('logo.png', width:"85"), root_path , method: :get) %> </a>
+      <a href="/" class="right brand-logo"> <%= image_tag("logo.png", style:"max-width:75px") %> </a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
+      <ul class="left hide-on-med-and-down">
         <li><a href="/programs">Programas</a></li>
         <li><a href="/schedules">Horarios</a></li>
         <li><a href="/galleries">Galería</a></li>

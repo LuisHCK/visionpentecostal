@@ -2,7 +2,7 @@
     <ul class="slides">
       <% @programs.order("created_at desc").limit(7).each do |program|%>       
       <li>
-        <img src="<%= program.portada %>"> 
+        <img src="<%= program.cover.url() %>"> 
         <div class="caption left-align">
           <h3> <%= program.titulo %> </h3>
           <h5 class="max-line"><%= program.descripcion %> </h5>
