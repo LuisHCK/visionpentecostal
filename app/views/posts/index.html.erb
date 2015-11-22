@@ -1,8 +1,17 @@
 <div class="grey lighten-2  container center-xs col-sm-8">
+
+	<% if admin_signed_in? %> <!--Boton para crear post-->
+		   <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+		    <a href="/posts/new" class="btn-floating btn-large red  waves-effect waves-light">
+		      <i  class="large material-icons">add</i>
+		    </a>
+		  </div>
+	<% end %> <!--Boton para crear post-->
+
 		<% @posts.each do |post| %>
 			<div class="card">
 		            <div class="card-image">
-		              <img src= "<%= post.portada %>" >
+		              <img src= "<%= post.cover.url() %>" >
 		              <span class="card-title"> <%= post.titulo %> </span>
 		            </div>
 		            <div class="card-content">

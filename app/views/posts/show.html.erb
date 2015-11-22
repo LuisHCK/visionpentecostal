@@ -1,13 +1,13 @@
 
  <% link_edit = edit_post_path(@post)%>
 
-<div class="container-fixed">
-		<h2>
+<div class="grey lighten-2  container center-xs col-sm-8">
+		<h4>
 			 <%= @post.titulo %>
-		</h2>
+		</h4>
 
-		<%img = @post.portada%>
-		<img src="<%= img %>">
+		<%img = @post.cover.url()%>
+		<img style="max-width: 100%" src="<%= img %>">
 
 		<p>
 			<%= @post.descripcion %>
@@ -30,4 +30,5 @@
 
 
 <% end %>
+</div>
 

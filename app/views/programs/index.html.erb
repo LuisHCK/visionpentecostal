@@ -1,21 +1,21 @@
 
 	 	
-<div class="container center-xs col-sm-8 grey lighten-2 ">
-<h1>Programas</h1>
+<div class="container center-xs col-sm-8 ">
+<h3 class="white-text">Programas</h3>
   <div style="margin-left: 5%; margin-right: 5%">
 
-	<% if admin_signed_in? %>
-   <div class="fixed-action-btn " style="bottom: 45px; right: 24px;">
+	<% if admin_signed_in? %> <!--Boton para crear post-->
+   <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
     <a href="/programs/new" class="btn-floating btn-large red  waves-effect waves-light">
       <i  class="large material-icons">add</i>
     </a>
   </div>
-	<% end %>
+	<% end %> <!--Boton para crear post-->
 
 <% @programs.each do |program| %>	
-<%img = program.portada%>
+<%img = program.cover.url()%>
 <div>
-  <div class="card medium">
+  <div class="card medium z-depth-2">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator" src="<%= img %>">
     </div>
@@ -34,7 +34,7 @@
       <p> <%= program.descripcion %> </p>
 
     </div>
-      <div class="card-action">
+      <div  style="padding-top: 10px; padding-bottom: 10px;" class="card-action">
 
           <%= link_to "Ver Mas", program, class:"btn "%>
       </div>
