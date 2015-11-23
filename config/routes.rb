@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :galleries
 
+  resources :pictures
+
   resources :articles
 
   resources :contact
