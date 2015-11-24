@@ -6,9 +6,46 @@
 <%= render "/posts/banner"%>
 </div>
 
+<!--Galerías-->
+
+<div class="blue-grey lighten-4">
+
+<div style="padding-top: 1%; padding-left:5%; padding-rigth:5%" class="card-panel  blue darken-2 white-text">
+	<h5 >Galerías de Fotos</h5>
+</div>
+
+ <div class="row">
+
+  <% @galleries.order("created_at desc").limit(4).each do |gallery| %>
+<div class="col s12 m6 l3">
+
+	<div class="card small z-depth-1">
+	      <div class="card-image">
+	          <% if gallery.pictures.first %>
+	            <%= link_to image_tag(gallery.pictures.first.image.url), gallery_path(gallery) %>
+	          <% end %>
+	      </div>
+
+	      <div class="card-content">
+	        <p class="max-line">
+	          <%= gallery.description%>
+	        </p>
+	      </div>
+	      <div class="card-action center-xs">
+				<%= link_to("Ver Galería!", gallery, class:'btn  light-blue darken-4') %>
+	      </div>
+	</div>
+</div>
+  <% end %>
+
+	</div>
+</div>
+
 <!--Ultimas pulbicaciones-->
 <div class="blue-grey lighten-4">
-	<h5 style="margin-left:5%">Ultimas Publicaciónes</h5>
+<div style="padding-top: 1%; padding-left:5%; padding-rigth:5%" class="card-panel  blue darken-2 white-text">
+		<h5 >Ultimas Publicaciónes</h5>
+	</div>
 	
 	<div class="row center-xs">
 
@@ -32,13 +69,11 @@
 		<% end %>
 	</div>
 
-<!--Galerías-->
-</div>
-
+<!--Actividades-->
 <div class="blue-grey lighten-4">
-	<h5 style="margin-left:5%">Galerías de Fotos</h5>
-</div>
 
-<div class="blue-grey lighten-4">
+<div style="padding-top: 1%; padding-left:5%; padding-rigth:5%" class="card-panel  blue darken-2 white-text">
 	<h5 style="margin-left:5%">Nuestras Actividades</h5>
+</div>
+
 </div>
