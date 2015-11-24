@@ -3,6 +3,7 @@ class WelcomeController < ProgramsController
 	def index
 		@posts = Post.all
 		@programs = Program.all
+		@galleries = Gallery.all
 	end
 
 	def get
