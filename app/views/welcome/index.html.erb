@@ -47,27 +47,30 @@
 		<h5 >Ultimas Publicaciónes</h5>
 	</div>
 	
-	<div class="row center-xs">
+ <div class="row">
 
 	<% @posts.order("created_at desc").limit(4).each do |post| %>		
+	
+	<div class="col s12 m6 l3">
 
-		<div style="margin-left:1%; margin-rigth:1%; max-width:320px" class="card small z-depth-1">
+		<div class="card small z-depth-1">
 			<div class="card-image">
 				<%= image_tag(post.cover.url()) %>	
 			</div>
-				<span class"card-title"><strong> <%= post.titulo %> </strong></span>	
 			<div style="padding-top:5px" class="card-content">
+				<strong> <%= post.titulo %> </strong>
 				<p class="max-lines">
 					<%= post.descripcion %>
 				</p>			
 			</div>
-			<div class="card-action"> 
+			<div class="center-xs card-action"> 
 			<%= link_to("Ver Más!", post, class:'btn  light-blue darken-4') %>
 			</div>		
 		</div>
 
 		<% end %>
 	</div>
+</div>
 
 <!--Actividades-->
 <div class="blue-grey lighten-4">

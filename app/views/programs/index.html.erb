@@ -1,8 +1,11 @@
 
 	 	
-<div class="container center-xs col-sm-8 ">
-<h3 class="white-text">Programas</h3>
-  <div style="margin-left: 5%; margin-right: 5%">
+<div class="grey lighten-2 container">
+
+<div style="padding-top: 1%; padding-left:5%; padding-rigth:5%" class="card-panel  blue darken-2 white-text">
+  <h3 class="white-text">Programas</h3>
+</div>
+  
 
 	<% if admin_signed_in? %> <!--Boton para crear post-->
    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
@@ -12,43 +15,47 @@
   </div>
 	<% end %> <!--Boton para crear post-->
 
-<% @programs.each do |program| %>	
-<%img = program.cover.url()%>
-<div>
-  <div class="card medium z-depth-2">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="<%= img %>">
-    </div>
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4"><%= program.titulo %><i class="material-icons right">more_vert</i></span>
-      <p class="card-text">
+ <div class="row center-xs">
+    <% @programs.each do |program| %>	
 
-      		<p>
-      			<%= program.descripcion %>
-      		</p>
-      		
-      </p>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4"> <%= program.titulo %> <i class="material-icons right">close</i></span>
-      <p> <%= program.descripcion %> </p>
+  <div class="col">
+    <%img = program.cover.url()%>
+    <div>
+      <div class="card medium z-depth-2">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="<%= img %>">
+        </div>
 
-    </div>
-      <div  style="padding-top: 10px; padding-bottom: 10px;" class="card-action">
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"> <srtong> <%= program.titulo %> </srtong> <i class="material-icons right">more_vert</i></span>
+          <p class="card-text">
 
-          <%= link_to "Ver Mas", program, class:"btn "%>
+          		<p>
+          			<%= program.descripcion %>
+          		</p>
+          		
+          </p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"> <%= program.titulo %> <i class="material-icons right">close</i></span>
+          <p> <%= program.descripcion %> </p>
+
+        </div>
+          <div  style="padding-top: 10px; padding-bottom: 10px;" class="card-action">
+
+              <%= link_to "Ver Mas", program, class:"btn "%>
+          </div>
+
       </div>
 
+    </div>
   </div>
 
-</div>
 
-
-
-<% end -%>
+    <% end -%>
 
     
-  </div> <!--End Div -->
+  </div> <!--End ROW -->
 
 </div>
 

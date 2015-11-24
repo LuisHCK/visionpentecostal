@@ -1,18 +1,24 @@
 
  <% link_edit = edit_post_path(@post)%>
 
-<div class="grey lighten-2  container center-xs col-sm-8">
-		<h4>
+<div class="grey lighten-2 container">
+<div style="padding-top: 1%; padding-left:5%; padding-rigth:5%" class="card-panel  blue darken-2 white-text">
+    <h4>
 			 <%= @post.titulo %>
 		</h4>
+</div>
 
-		<%img = @post.cover.url()%>
-		<img style="max-width: 100%" src="<%= img %>">
+<div class="center-xs">
+    <%img = @post.cover.url()%>
+    <img style="max-width: 100%" src="<%= img %>">
+</div>
 
-		<p>
-			<%= @post.descripcion %>
-		</p>
-
+<div style="padding-bottom:5%" class="container">
+    <p>
+      <%= @post.descripcion %>
+    </p>
+</div>
+ 
  <% if admin_signed_in?%>
 
   <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
