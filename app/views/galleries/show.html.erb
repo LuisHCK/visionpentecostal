@@ -1,63 +1,50 @@
-<div class="container grey lighten-2 container">
-  <h1>Galería</h1>
+<div class="container grey lighten-2">
 
   <input type="hidden" id="galleryID" value="<%= @gallery.id %>">
-
-  <p>
-    <b>Name: </b>
+<div style="padding-top: 1%; padding-left:5%; padding-rigth:5%" class="card-panel  blue darken-2 white-text">
+  <h5>
     <%= @gallery.name %>
-  </p>
+  </h5>
 
   <p>
-    <b>Description: </b>
     <%= @gallery.description %>
   </p>
-
-  <div class="form-actions">
-    <%= link_to 'Back', galleries_path, :class => 'btn btn-mini'  %>
-    <%= link_to 'Edit gallery', edit_gallery_path(@gallery), :class => 'btn btn-mini' %>
-    <%= link_to 'Delete gallery', gallery_path(@gallery), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-mini' %>
-  </div>
-
-<h2>Pictures</h2>
 </div>
 
+
 <!--GALERIA :D-->
-<div class="fotorama"
-     data-nav="thumbs">
-  <a href="1.jpg"><img src="1_thumb.jpg"></a>
-  <a href="2.jpg"><img src="2_thumb.jpg"></a>
-</div>
-<!--GALERIA :D-->
-
-
-
-<div class="row">
-  <ul class="thumbnails files">
+<div class="row center-xs">
+  
+<div class=" fotorama" data-nav="thumbs">
 <% unless @pictures.empty? %>
   <% @pictures.each do |pic| %>
-    <li class="span3" id="picture_<%= pic.id %>">
-    <div class="thumbnail">
-      <%= image_tag pic.image.url %>
-      <div class="caption">
-        <p style="text-align: center;">
-        <%= link_to "Edit picture", picture_path(pic) %>
-
-        <%=
-          link_to "Delete picture", pic,
-            :data => { :confirm => "Are you sure?" },
-            :method => :delete
-          %>
-
-        </p>
-      </div>
-    </div>
-    </li>
-  <% end %>
-<% end %>
-</ul>
+  <a href="<%= pic.image.url %>"><img src="<%= pic.image.url(:thumb)%>"></a>
+  <% end -%>
+  <% end -%>
+</div>
+<!--GALERIA :D-->
 </div>
 
+  <% if admin_signed_in?%>
+
+        <% link_edit = edit_gallery_path(@gallery) %>
+        
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li><a href="#modal1" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></i></a></li>
+      <li><a href=" <%=link_edit %>" class="btn-floating yellow darken-1"><i class="material-icons">code</i></a></li>
+      <li><a href="/galleries/new" class="btn-floating green"><i class="material-icons">publish</i></a></li>
+    </ul>
+  </div>
+  <%= render "/layouts/popup_delete_gallery" , titulo: @gallery.name%>
+
+<%end%>
+
+
+</div><!--end -->
 
 <!-- fotorama.css & fotorama.js. -->
 <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
