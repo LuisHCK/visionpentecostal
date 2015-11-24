@@ -1,0 +1,10 @@
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>¿Está seguro que desea eliminar: <%= titulo %></h4>
+      <p>Tenga en cuenta que una vez eliminado : "<%= titulo %>" no se podrá recuperar </p>
+    </div>
+    <div class="modal-footer">
+    <%= link_to 'Eliminar', gallery_path(@gallery), :method => 'delete', :class => 'btn' %>
+    </div>
+  </div>
