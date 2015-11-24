@@ -1,30 +1,46 @@
-<div class="row">
-  <h1>Galleries</h1>
-  <%= link_to 'New', new_gallery_path, :class => 'btn btn-mini' %>
-  <p></p>
-  <ul class="thumbnails files">
-    <% @galleries.each do |gallery| %>
-        <li class="span4" id="gallery_<%= gallery.id %>">
-          <div class="thumbnail">
-            <% if gallery.pictures.first %>
-            <%= link_to image_tag(gallery.pictures.first.image.url), gallery_path(gallery) %>
-            <% else %>
-              N/A
-            <% end %>
-            <div class="caption">
-              <p style="text-align: center;">
-                <%= gallery.name.truncate(14) %>
-                <%= link_to "Show", gallery_path(gallery) %>
-                <%= link_to "Edit", edit_gallery_path(gallery) %>
-                <%= link_to "Delete", gallery,
-                  :data => { :confirm => "Are you sure?" },
-                  :method => :delete
-                %>
-              </p>
-            </div>
-          </div>
-        </li>
-    <% end %>
-  </ul>
+<div class="center-xs grey lighten-2 container">
 
+  <% if admin_signed_in? %> <!--Boton para crear post-->
+   <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a href="/galleries/new" class="btn-floating btn-large red  waves-effect waves-light">
+      <i  class="large material-icons">add</i>
+    </a>
+  </div>
+  <% end %> <!--Boton para crear post-->
+
+  <div style="padding-top: 1%; padding-left:5%; padding-rigth:5%" class="card-panel  blue darken-2 white-text">
+     <h3>Galerías de fotos</h3>
+     <p>
+       Véa nuestra galería de fotos, en donde hemos capturado los momentos mas importantes de las actividades que realizamos como ministerio televisivo y como iglesia.
+     </p>
+  </div>
+
+    <!-- Terjetas de galerias -->
+<div class="row center-xs">
+  <div class="col s12 m7">
+  
+  <% @galleries.each do |gallery| %>
+
+    <div class="card">
+      <div class="card-image">
+          <% if gallery.pictures.first %>
+            <%= link_to image_tag(gallery.pictures.first.image.url), gallery_path(gallery) %>
+          <% end %>
+      </div>
+
+      <div class="card-content">
+        <h5> <%= gallery.name %> </h5>
+        <p class="max-line">
+          <%= gallery.description%>
+        </p>
+      </div>
+    </div>
+
+  <% end %>
 </div>
+</div>
+    <!-- Terjetas de galerias -->
+
+
+
+</div> 
